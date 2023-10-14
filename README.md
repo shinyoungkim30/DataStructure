@@ -52,6 +52,15 @@
 - 이런 배열은 자료구조를 배울 때 도움이 되지 않는다! 배열이 없다면 어떻게 할까 에서 출발
 <br/>
 - [1, 2, 3, 4, 5] 이런 배열을 메모리라고 생각해본다(실제로는 이렇지 않지만 2차원 배열이라고 생각) <br/>
-![image](https://github.com/shinyoungkim30/DataStructure/assets/130364428/6cbaaf1f-c710-4b56-bbc1-7b1d1ef12f4f)
-
+<img src="https://github.com/shinyoungkim30/DataStructure/assets/130364428/6cbaaf1f-c710-4b56-bbc1-7b1d1ef12f4f"/> <br/>
+배열 자체의 메모리는 A1이고, 각 칸이 가리키는 메모리도 다 별개로 저장이 되어 있을 수 있다.<br/>
+<img src="https://github.com/shinyoungkim30/DataStructure/assets/130364428/001a7af8-5b3e-46c8-b76b-2c590fd9d10f"/> <br/>
+다음 데이터를 G1에 추가하고 다음 데이터를 추가할 때 A2에 추가하게 되지만 <br/>
+만약 A2에 객체가 있어서 그 값들이 다음 칸까지 이미 다 차버린 경우 다음에 비어있는 칸인 E2에 추가하게 된다 <br/>
+<img src="https://github.com/shinyoungkim30/DataStructure/assets/130364428/3bb20c05-89a7-443c-99d3-ff44fec5085d" /> <br/>
+- 컴퓨터는 실제로 배열을 보고 데이터를 찾는게 아니라 메모리를 보고 찾게 된다
+그래서 7을 찾을 때 어디에 있는지 알 수 없게 된다
+- 그래서 실제로는 다음 칸에 어떤 데이터가 있는지 힌트를 저장한다(값, 다음 값) <br/>
+<img src="https://github.com/shinyoungkim30/DataStructure/assets/130364428/45b25c8d-1070-4595-bace-ddbecaad11ae"/><br/>
+이런식으로 A1이라는 배열은 쭉 이어지게 된다. 이렇게 체인처럼 서로서로 연결되어 있는 것을 연결리스트라고 한다 <br/>
 
