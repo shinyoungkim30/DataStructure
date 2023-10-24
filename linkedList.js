@@ -15,7 +15,15 @@ class LinkedList {
     this.length++;
     return this.length;
   }
-  search(value) {}
+  search(index) {
+    let count = 0;
+    let current = this.head;
+    while (count < index) {
+      current = current?.next;
+      count++;
+    }
+    return current?.value;
+  }
   remove(value) {}
 }
 class Node {
@@ -32,8 +40,11 @@ ll.add(2); // 2
 ll.add(3); // 3
 ll.add(4); // 4
 ll.add(5); // 5
-console.log(ll.add(6)); // 6
-ll.search(4);
-ll.search(7); // null
-ll.remove(4);
-ll.search(4); // null
+ll.add(6); // 6
+console.log(ll.search(3));
+console.log(ll.search(5));
+console.log(ll.search(7));
+// ll.search(4);
+// ll.search(7); // null
+// ll.remove(4);
+// ll.search(4); // null
