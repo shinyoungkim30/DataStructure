@@ -16,15 +16,30 @@ class LinkedList {
     return this.length;
   }
   search(index) {
+    return this.#search(index)[1]?.value;
+  }
+  #search(index) {
     let count = 0;
+    let prev;
     let current = this.head;
     while (count < index) {
+      prev = current;
       current = current?.next;
       count++;
     }
-    return current?.value;
+    return [prev, current];
   }
-  remove(value) {}
+  remove(index) {
+    const [prev, current] = this.#search(index);
+    if (prev && current) {
+      prev.next = current.next;
+      this.length--;
+      return this.length;
+    } else if (current) {
+      this.head = current.next;
+      return this.length;
+    }
+  }
 }
 class Node {
   next = null;
@@ -41,10 +56,9 @@ ll.add(3); // 3
 ll.add(4); // 4
 ll.add(5); // 5
 ll.add(6); // 6
-console.log(ll.search(3));
-console.log(ll.search(5));
-console.log(ll.search(7));
-// ll.search(4);
-// ll.search(7); // null
-// ll.remove(4);
-// ll.search(4); // null
+ll.search(6);
+ll.remove(4);
+ll.search(4);
+ll.remove(4);
+ll.search(4);
+ll.remove(4);
